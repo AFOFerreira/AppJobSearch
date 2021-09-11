@@ -1,12 +1,12 @@
-﻿using JobSearch.domain.Models;
-using JobSearchAPI.Database;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using JobSearch.domain.Models;
+using JobSearchAPI.Database;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 namespace JobSearchAPI.Controllers
 {
     [Route("api/[controller]")]
@@ -14,17 +14,20 @@ namespace JobSearchAPI.Controllers
     public class UsersController : ControllerBase
     {
         private JobSearchContext _data;
-
         public UsersController(JobSearchContext data)
         {
             _data = data;
         }
 
+        /*
+         * http://seusite.com.br/api/Users?email=teste@gmail.com&password=123456
+         */
         [HttpGet]
         public IActionResult GetUser(string email, string password)
         {
-           User userDb = _data.Users.FirstOrDefault(a => a.Email == email && a.Password == password);
-            if(userDb == null)
+            User userDb = _data.Users.FirstOrDefault(a => a.Email == email && a.Password == password);
+
+            if (userDb == null)
             {
                 return NotFound(); //HTTP - 404 - Não encontrado!
             }
@@ -35,12 +38,12 @@ namespace JobSearchAPI.Controllers
         [HttpPost]
         public IActionResult AddUser(User user)
         {
-            //TODO: Validacao
+            //TODO - Validação...
             _data.Users.Add(user);
             _data.SaveChanges();
 
-            return CreatedAtAction(nameof(GetUser), new { email = user.Email, password = user.Password});//201 - created
-
+            return CreatedAtAction(nameof(GetUser), new { email = user.Email, password = user.Password }, user);
         }
+
     }
 }
