@@ -24,7 +24,7 @@
                 <Frame StyleClass="EntryFrame" Grid.Row="1" Grid.ColumnSpan="2">
                     <Entry Placeholder="Senha"/>
                 </Frame>
-                <Button Text="Acessar" Grid.Row="2"/>
+                <Button Text="Acessar" Clicked="btn_Start" Grid.Row="2"/>
                 <Button Text="Cadastrar" Clicked="btn_Register" Grid.Row="2" Grid.Column="1"/>
 
             </Grid>

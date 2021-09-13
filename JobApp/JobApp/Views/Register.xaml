@@ -10,7 +10,7 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
               <Label Text="JobSearch" Style="{StaticResource Title}" Grid.Column="1"/>
-                <Button Text="&#60;" Padding="0" HeightRequest="10" Clicked="Go_Back" Grid.Column="0" />
+               <ImageButton Source="back.png" Clicked="Go_Back" Style="{StaticResource BackButton}" />
             </Grid>
             <BoxView Color="#D7CCFF" HeightRequest="1"/>
 
