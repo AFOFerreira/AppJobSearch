@@ -58,6 +58,7 @@ namespace JobSearchAPI.Controllers
             return new JsonResult(jobDb);
         }
 
+        [HttpPost]
         public IActionResult AddJob(Job job)
         {
             //TO-DO: Add validação (infinity scroll).

@@ -17,4 +17,10 @@
     <ProjectReference Include="..\JobSearchDomain\JobSearchDomain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Database\JobSearch.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
