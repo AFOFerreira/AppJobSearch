@@ -1,8 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="JobApp.App">
+             x:Class="JobApp.App"
+             >
     <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="White">#ffffff</Color>
+            <Color x:Key="Black">#000000</Color>
+            
+            <Color x:Key="Purple">#623CEA</Color>
+            <Color x:Key="PurpleLight">#D7CCFF</Color>
 
+            <Color x:Key="GrayBlue">#f1f3f6</Color>
+            <Color x:Key="DarkGrayBlue">#b3bdc8</Color>
+
+            <Color x:Key="Gray">#8FA0AC</Color>
+            <Color x:Key="DarkGray">#4E5C69</Color>
+            <Color x:Key="LightGray">#CAD1DC</Color>
+            
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="Padding" Value="15"/>
+                <Setter Property="NavigationPage.HasNavigationBar" Value="False" />
+            </Style>
+
+            <Style TargetType="Frame" Class="EntryFrame">
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="HasShadow" Value="False"/>
+
+                <Setter Property="BackgroundColor" Value="{StaticResource GrayBlue}"/>
+            </Style>
+            
+            <Style TargetType="Label" x:Key="Title">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontFamily" Value="MontserratBold"/>
+                <Setter Property="Margin" Value="0,0,0,10"/>
+                <Setter Property="TextColor" Value="{StaticResource Purple}"/>
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="Margin" Value="10,0" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource DarkGrayBlue}"/>
+                <Setter Property="TextColor" Value="{StaticResource Black}"/>
+                <Setter Property="FontFamily" Value="MontserratRegular"/>
+                <Setter Property="FontSize" Value="12"/>
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource Purple}"/>
+                <Setter Property="TextColor" Value="{StaticResource White}"/>
+                <Setter Property="FontFamily" Value="MontserratRegular"/>
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="FontSize" Value="12"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
