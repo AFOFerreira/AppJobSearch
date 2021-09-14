@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -35,6 +31,13 @@ namespace JobApp.Views
         private void FocusCidade(object sender, EventArgs e)
         {
             txtCidade.Focus();
+        }
+
+        private void btn_Logout(object sender, EventArgs e)
+        {
+            App.Current.Properties.Remove("User");
+            App.Current.SavePropertiesAsync();
+            App.Current.MainPage = new Login();
         }
     }
 }

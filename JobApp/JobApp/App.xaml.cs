@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace JobApp
 {
@@ -9,8 +7,14 @@ namespace JobApp
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new Views.Login());
+            if (App.Current.Properties.ContainsKey("User"))
+            {
+                MainPage = new NavigationPage(new Views.Start());
+            }
+            else
+            {
+                MainPage = new NavigationPage(new Views.Login());
+            }
         }
 
         protected override void OnStart()

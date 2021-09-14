@@ -13,7 +13,7 @@
                <ImageButton Source="back.png" Clicked="Go_Back" Style="{StaticResource BackButton}" />
             </Grid>
             <BoxView Color="#D7CCFF" HeightRequest="1"/>
-
+            <Label x:Name="txtMessage" TextColor="OrangeRed"/>
             <Grid  VerticalOptions="CenterAndExpand">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
@@ -26,15 +26,15 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Frame StyleClass="EntryFrame" Grid.Row="0" Grid.ColumnSpan="2">
-                    <Entry Placeholder="Nome" />
+                    <Entry x:Name="txtName" Placeholder="Nome" />
                 </Frame> 
                 <Frame StyleClass="EntryFrame" Grid.Row="1" Grid.ColumnSpan="2">
-                    <Entry Placeholder="Email" />
+                    <Entry x:Name="txtEmail" Placeholder="Email" />
                 </Frame>
                 <Frame StyleClass="EntryFrame" Grid.Row="2" Grid.ColumnSpan="2">
-                    <Entry Placeholder="Senha"/>
+                    <Entry x:Name="txtPassword" Placeholder="Senha"/>
                 </Frame>
-                <Button Text="Salvar" Grid.Row="3"/>
+                <Button Text="Salvar" Clicked="SaveAction" Grid.Row="3"/>
                
             </Grid>
         </StackLayout>

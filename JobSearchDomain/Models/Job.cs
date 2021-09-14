@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JobSearchDomain.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -23,9 +24,13 @@ namespace JobSearch.domain.Models
         [Required(ErrorMessageResourceType = typeof(JobSearchDomain.Models.Utility.Language.Messages), ErrorMessageResourceName = "MSG_001")]
         public string CityState { get; set; }
 
-        [Display(Name = "Salary", ResourceType = typeof(JobSearchDomain.Models.Utility.Language.Fields))]
+        [Display(Name = "InitialSalary", ResourceType = typeof(JobSearchDomain.Models.Utility.Language.Fields))]
         [Required(ErrorMessageResourceType = typeof(JobSearchDomain.Models.Utility.Language.Messages), ErrorMessageResourceName = "MSG_001")]
-        public double Salary { get; set; }
+        public double InitialSalary{ get; set; }
+
+        [Display(Name = "FinalSalary", ResourceType = typeof(JobSearchDomain.Models.Utility.Language.Fields))]
+        [Required(ErrorMessageResourceType = typeof(JobSearchDomain.Models.Utility.Language.Messages), ErrorMessageResourceName = "MSG_001")]
+        public double FinalSalary { get; set; }
 
         [Display(Name = "ContractType", ResourceType = typeof(JobSearchDomain.Models.Utility.Language.Fields))]
         [Required(ErrorMessageResourceType = typeof(JobSearchDomain.Models.Utility.Language.Messages), ErrorMessageResourceName = "MSG_001")]

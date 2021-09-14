@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace JobSearch.domain.Models
+namespace JobSearchDomain.Models
 {
     public class User
     {
         [Key]
         public int Id { get; set; }
 
-        [Display(Name="Name", ResourceType = typeof(JobSearchDomain.Models.Utility.Language.Fields))]
-        [Required(ErrorMessageResourceType =typeof(JobSearchDomain.Models.Utility.Language.Messages), ErrorMessageResourceName ="MSG_001")]
+        [Display(Name = "Name", ResourceType = typeof(JobSearchDomain.Models.Utility.Language.Fields))]
+        [Required(ErrorMessageResourceType = typeof(JobSearchDomain.Models.Utility.Language.Messages), ErrorMessageResourceName = "MSG_001")]
         [MinLength(10, ErrorMessageResourceType = typeof(JobSearchDomain.Models.Utility.Language.Messages), ErrorMessageResourceName = "MSG_003")]
         public string Name { get; set; }
 

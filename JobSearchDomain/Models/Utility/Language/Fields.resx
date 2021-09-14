@@ -138,6 +138,12 @@
   <data name="EmailToSend" xml:space="preserve">
     <value>email de contato</value>
   </data>
+  <data name="FinalSalary" xml:space="preserve">
+    <value>Salário final</value>
+  </data>
+  <data name="InitialSalary" xml:space="preserve">
+    <value>Salário inicial</value>
+  </data>
   <data name="JobTitle" xml:space="preserve">
     <value>Cargo</value>
   </data>
@@ -152,9 +158,6 @@
   </data>
   <data name="PublicationDate" xml:space="preserve">
     <value>data de públicacao</value>
-  </data>
-  <data name="Salary" xml:space="preserve">
-    <value>Salário</value>
   </data>
   <data name="TecnologyTools" xml:space="preserve">
     <value>Ferramentas e tecnologias</value>

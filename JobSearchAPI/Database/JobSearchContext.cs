@@ -1,5 +1,6 @@
 ﻿
 using JobSearch.domain.Models;
+using JobSearchDomain.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
