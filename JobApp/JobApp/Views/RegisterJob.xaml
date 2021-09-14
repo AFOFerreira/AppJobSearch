@@ -38,7 +38,7 @@
                         <Entry x:Name="txtFinalSalary" Keyboard="Numeric" Placeholder="Salário final (reais)" />
                     </Frame>
                     <Frame StyleClass="EntryFrame" >
-                        <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal" Padding="0,0,20,0">
                             <Label Text="Regime" HorizontalOptions="FillAndExpand" Style="{StaticResource LabelEntry}"/>
                             <RadioButton  x:Name="rb_CLT" IsChecked="True" Content="CLT" />
                             <RadioButton  Content="PJ" />

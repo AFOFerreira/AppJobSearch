@@ -6,6 +6,7 @@ using JobSearchDomain.Models;
 using Newtonsoft.Json;
 using Rg.Plugins.Popup.Extensions;
 using System;
+using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
@@ -39,14 +40,14 @@ namespace JobApp.Views
                 Company = txtCompany.Text,
                 JobTitle = txtJobTitle.Text,
                 CityState = txtCityState.Text,
-                ContractType = (rb_CLT.IsChecked)? "CLT":"PJ",
-                InitialSalary = double.Parse(txtInitialSalaty.Text),
-                FinalSalary = double.Parse(txtFinalSalary.Text),
+                ContractType = rb_CLT.IsChecked ? "CLT" : "PJ",
+                InitialSalary = GetValueConverted(txtInitialSalaty.Text),
+                FinalSalary = GetValueConverted(txtFinalSalary.Text),
                 TecnologyTools = txtTecnologyTools.Text,
                 CompanyDescription = txtCompanyDescription.Text,
                 JoobDescription = txtJobDescription.Text,
                 Benefits = txtBenefits.Text,
-                EmailToSend = txtBenefits.Text,
+                EmailToSend = txtInterestedEmail.Text,
                 PublicationDate = DateTime.Now,
                 UserId = user.Id
 
@@ -57,10 +58,9 @@ namespace JobApp.Views
 
             if (responseService.IsSuccess)
             {
-
-                App.Current.Properties.Add("User", JsonConvert.SerializeObject(responseService.Data));
-                await App.Current.SavePropertiesAsync();
-                App.Current.MainPage = new NavigationPage(new Start());
+                await Navigation.PopAllPopupAsync();
+                await DisplayAlert("Vaga cadastrada!", "Vaga cadastrada com sucesso!", "OK");
+                await Navigation.PopAsync();
             }
             else
             {
@@ -79,10 +79,24 @@ namespace JobApp.Views
 
                 }
                 else
+                {
                     await DisplayAlert("Erro!", "Oops! Ocorreu em erro inesperado! Tente novamente mais tarde!", "OK");
+                }
+                await Navigation.PopAllPopupAsync();
             }
-            await Navigation.PopAllPopupAsync();
-            await Navigation.PopAsync();
+        }
+
+        public static double GetValueConverted(string text)
+        {
+            //Remover todas as letras
+            if (text != null)
+            {
+                var allowedsChars = "01234567890.";
+                text = new string(text.Where(c => allowedsChars.Contains(c)).ToArray());
+                //Converter para double
+                return Double.Parse(text);
+            }
+            return 0;
         }
     }
 }
