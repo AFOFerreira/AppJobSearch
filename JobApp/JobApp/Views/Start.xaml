@@ -58,8 +58,8 @@
                 </Label.FormattedText>
             </Label>
 
-
-
+            <Grid>
+           
             <CollectionView x:Name="ListOfJobs" RemainingItemsThreshold="-1" RemainingItemsThresholdReached="InfinitySearch">
                 <CollectionView.EmptyView>
                     <Label Text="0 resultado." Style="{StaticResource JobTitle}" FontSize="28"
@@ -109,6 +109,9 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <ActivityIndicator x:Name="loading" IsRunning="True" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="false"/>
+                
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

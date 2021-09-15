@@ -52,6 +52,8 @@ namespace JobApp.Views
 
         private async void Search(object sender, EventArgs e)
         {
+            loading.IsVisible = true;
+            loading.IsRunning = false;
             string word = txtPesquisa.Text;
             string cityState = txtCidade.Text;
 
@@ -71,6 +73,9 @@ namespace JobApp.Views
             {
                 await DisplayAlert("Erro!", "Oops! Ocorreu em erro inesperado! Tente novamente mais tarde!", "OK");
             }
+
+            loading.IsRunning = false;
+            loading.IsVisible = false;
         }
 
         private async void InfinitySearch(object sender, EventArgs e)
